@@ -5,12 +5,12 @@ import time
 clear = lambda: os.system('cls || clear')
 clear()
 
-# Pengguna akun dengan format username sebagai key, dan value-nya berupa dictionary dengan password dan role
+# Pengguna-pengguna akun
 akun = {
     "Owner": {"password": "Owner123", "role": "Owner"}
 }
 
-# Produk-produk ATK dengan nomor produk sebagai key, dan value-nya berupa dictionary dengan detail produk
+# Produk-produk ATK
 produkATK = {
     1: {"nama": "Kertas Folio", "harga_jual": 1000, "stok": 100, "harga_beli": 500},
     2: {"nama": "Keras HVS", "harga_jual": 1000, "stok": 500, "harga_beli": 500},
@@ -72,7 +72,7 @@ def displayprodukOwner():
     print("=" * 90)
 
 
-# Tampilan Produk Admin
+# Tampilan Produk dengan Role Admin
 def displayprodukAdmin():
     clear()
     print("\t\t\t----- DAFTAR PRODUK -----")
@@ -84,7 +84,7 @@ def displayprodukAdmin():
         print(f"{no:<5}{produk['nama']:<20}{produk['harga_jual']:<15}{produk['stok']:<10}{produk['harga_beli']:<15}")
     print("=" * 75)
 
-#  Tambah Produk 
+# BagianTambah Produk 
 def TambahProduk():
     clear()
     displayprodukOwner()
@@ -100,7 +100,7 @@ def TambahProduk():
     produkATK[noBarang] = {"nama": nama, "harga_jual": harga_jual, "stok": stok, "harga_beli": harga_beli}
     print("Produk berhasil ditambahkan!")
 
-# Fungsi Update Produk
+# Bagian Update Produk
 def updateProduk():
     clear()
     displayprodukOwner()
@@ -122,7 +122,7 @@ def updateProduk():
     else:
         print("Produk tidak ditemukan!")
 
-# Fungsi Hapus Produk
+# Bagian Hapus Produk
 def hapusProduk():
     clear()
     displayprodukOwner()
@@ -137,7 +137,7 @@ def hapusProduk():
     else:
         print("Produk tidak ditemukan!")
 
-# Fungsi Total Profit
+# Bagian Total Profit
 def totalProfit():
     total_profit = 0
     for produk in produkATK.values():
@@ -145,7 +145,7 @@ def totalProfit():
         total_profit += profit
     return total_profit
 
-# Main Menu
+# Bagian Menu Utama
 def main():
     while True:
         clear()
